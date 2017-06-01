@@ -1,0 +1,9 @@
+<resources>
+    <string name="error_empty_order" translatable="false">Please enter order</string>
+    <string name="error_empty_sortby" translatable="false">Please enter sort by</string>
+    <string name="error_empty_site" translatable="false">Please enter site</string>
+    <string name="error_no_response" translatable="false">No response from service</string>
+    <string name="error_empty_user_list" translatable="false">Empty user list</string>
+
+    <!--<string name="app_name">Unit Testing Demo</string>-->
+</resources>

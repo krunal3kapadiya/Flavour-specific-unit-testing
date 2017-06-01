@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.unittestingdemo"
         minSdkVersion 15
@@ -22,33 +22,38 @@ android {
     productFlavors {
         staging {
             applicationIdSuffix = ".test"
-            resValue "string", "app_name", "A Test"
+            resValue "string", "app_name", "A Staging Flavor"
             //other keys
         }
         prod {
-            resValue "string", "app_name", "A"
+            resValue "string", "app_name", "A Prod Flavor"
             //other keys
         }
 
         dev {
             applicationIdSuffix = ".dev"
-            resValue "string", "app_name", "A Dev"
+            resValue "string", "app_name", "A Dev Flavor"
             //other keys
         }
 
         BStaging {
             applicationIdSuffix = ".b.test"
-            resValue "string", "app_name", "B Test"
+            resValue "string", "app_name", "BStaging Flavor"
             //other keys
         }
         BProd {
             applicationIdSuffix = ".b"
-            resValue "string", "app_name", "B"
+            resValue "string", "app_name", "BProd Flvor"
             //other keys
         }
     }
 
     sourceSets {
+
+        main {
+            manifest.srcFile 'src/a/AndroidManifest.xml'
+        }
+
         prod {
             java.srcDirs = ['src/a/java']
             res.srcDirs = ['src/a/res']
@@ -81,20 +86,28 @@ android {
 
         }
     }
+
+    // Create additional blocks to configure other source sets.
+    androidTest {
+
+        // If all the files for a source set are located under a single root
+        // directory, you can specify that directory using the setRoot property.
+        // When gathering sources for the source set, Gradle looks only in locations
+        // relative to the root directory you specify. For example, after applying
+        // the configuration below for the androidTest source set, Gradle looks for
+        // Java sources only in the src/tests/java/ directory.
+        setRoot 'src/test'
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
 
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile "com.android.support:recyclerview-v7:25.2.0"
-    compile "com.android.support:design:25.2.0"
-    compile "com.android.support:customtabs:25.2.0"
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile "com.android.support:recyclerview-v7:25.3.1"
+    compile "com.android.support:design:25.3.1"
+    compile "com.android.support:customtabs:25.3.1"
 
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:2.7.1'

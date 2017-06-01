@@ -44,7 +44,6 @@
         android:layout_alignLeft="@+id/tvPerson_name"
         android:layout_alignStart="@+id/tvPerson_name"
         android:layout_below="@+id/tvPerson_name"
-
         android:layout_marginLeft="10dp"
         android:autoLink="email"
         android:clickable="true"
@@ -82,6 +81,7 @@
         <View
             android:layout_width="10dp"
             android:layout_height="10dp"
+
             android:layout_gravity="center_vertical"
             android:background="@drawable/drawable_silver_badge"
             />
@@ -95,11 +95,11 @@
             android:layout_marginRight="5dp"
             tools:text="125"/>
 
-
         <View
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_gravity="center_vertical"
+
             android:background="@drawable/drawable_bronz_badge"
             />
 
@@ -112,12 +112,13 @@
             tools:text="125"/>
     </LinearLayout>
 
-
     <View
         android:layout_width="match_parent"
+
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
         android:layout_below="@+id/circleView"
+
         android:layout_marginTop="20dp"
         android:background="@color/colorAccent"/>
 
