@@ -1,5 +1,7 @@
 # Flavour-specific-unit-testing [![Build Status](https://travis-ci.org/krunal3kapadiya/Flavour-specific-unit-testing.svg?branch=master)](https://travis-ci.org/krunal3kapadiya/Flavour-specific-unit-testing)
 
+Samples of unit test cases which will use to run with specific flavours of the apps.
+
 ## How to contribute?
 - Check out contribution :point_right: [Guidelines](./CONTRIBUTING.md)  
 
